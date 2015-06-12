@@ -9,6 +9,7 @@ import java.util.List;
 import org.hibernate.Session;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.motechproject.tama.facility.repository.AllMonitoringAgents;
 import org.motechproject.tama.ivr.repository.AllCallLogs;
 import org.motechproject.tama.refdata.objectcache.AllCitiesCache;
 import org.motechproject.tama.patient.repository.AllPatients;
@@ -72,13 +73,17 @@ public class CallIds
 	 AllIVRLanguagesCache allIVRLanguages;
 	 @Autowired
 	 AllCitiesCache allCities;
+	 
+	 @Autowired
+	 AllMonitoringAgents allAgents;
 
 	 
 
 	 @Test
 	 public void test(){
-		 System.out.println("Maven + Hibernate + MySQL"+"  "+allCities );
+		/* System.out.println("Maven + Hibernate + MySQL"+"  "+allCities );
 	     session.beginTransaction();
+	     setAllMonitoringAgents();
 	    System.out.println("All Patients size   "+allPatients.getAll().size()+"\n\n\n");
 		 for (org.motechproject.tama.patient.domain.Patient patient: allPatients.getAll()){
 			 setSQLPatient(patient, allCities);
@@ -87,7 +92,7 @@ public class CallIds
 		 System.out.println("Count City Exception  "+cityEx);
 		 System.out.println("Count PPException "+cPPEx);
 		 System.out.println("Count MedHistory Exc   "+cMedHis);
-		 session.getTransaction().commit();
+		 session.getTransaction().commit();*/
 	 }
 	
 	
@@ -254,6 +259,19 @@ public class CallIds
     	
     	
     }
+    public void setAllMonitoringAgents(){
+    	System.out.println(allAgents.getAll().size()+"\n\n\n");
+    	for (org.motechproject.tama.facility.domain.MonitoringAgent item : allAgents.getAll()){
+    		MonitoringAgent hMonitoringAgent = new MonitoringAgent();
+    		hMonitoringAgent.setId(item.getId());
+    		hMonitoringAgent.setRevision(item.getRevision());
+    		hMonitoringAgent.setDocumentType(item.getDocumentType());
+    		hMonitoringAgent.setType(item.getDocumentType());
+    		hMonitoringAgent.setName(item.getName());
+    		hMonitoringAgent.setContactNumber(item.getContactNumber());
+    		session.save(hMonitoringAgent);
+    	}
+    }
     public static com.mkyong.common.Clinic setSQLClinic(org.motechproject.tama.facility.domain.Clinic clinic, AllCitiesCache allCities1){
 	
 	System.out.println("Before For Loop");
@@ -281,10 +299,8 @@ public class CallIds
     	}catch(Exception e){
     		e.printStackTrace();
     	}
-    	if(session.get(MonitoringAgent.class, monitorId)== null){
-    		MonitoringAgent hMonitoringAgent = new MonitoringAgent();
-    	}
-    		
+    	MonitoringAgent hMonitoringAgent = (MonitoringAgent)session.get(MonitoringAgent.class,monitorId);
+    	hClinic.setMonitoringAgent(hMonitoringAgent);
     	session.save(hClinic);
     	List<com.mkyong.common.ClinicianContact> hClinicianContacts = new ArrayList<com.mkyong.common.ClinicianContact>();
     	List<org.motechproject.tama.facility.domain.Clinic.ClinicianContact> clinicianContacts = clinic.getClinicianContacts();
@@ -482,6 +498,7 @@ public class CallIds
     	com.mkyong.common.Gender hGender = setSQLGender(patient.getGender());
     	
     	hPatient.setGender(hGender);
+    	
     	hPatient.setClinic(setSQLClinic(patient.getClinic(), allCities));
     	hPatient.setGenderId(patient.getGenderId());
     	hPatient.setClinic_id(patient.getClinic_id());

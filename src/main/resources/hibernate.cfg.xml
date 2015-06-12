@@ -41,23 +41,27 @@
  <mapping class="com.mkyong.common.PatientPreferences"></mapping>
  <mapping class="com.mkyong.common.CallLogH.CallEvent"></mapping>
   <mapping class="com.mkyong.common.CallLogH.CallLog"></mapping>
-   <mapping class="com.mkyong.common.CallLogH.DataMap"></mapping>
-    <mapping class="com.mkyong.common.PillRegimenH.PillRegimen"></mapping>
-    <mapping class="com.mkyong.common.PillRegimenH.Dosage"></mapping>
-     <mapping class="com.mkyong.common.AppointmentCalendarH.Visit"></mapping>
-      <mapping class="com.mkyong.common.AppointmentCalendarH.AppointmentCalendar"></mapping>
-       <mapping class="com.mkyong.common.AppointmentCalendarH.Appointment"></mapping>
+  <mapping class="com.mkyong.common.CallLogH.DataMap"></mapping>
+  <mapping class="com.mkyong.common.PillRegimenH.PillRegimen"></mapping>
+  <mapping class="com.mkyong.common.PillRegimenH.Dosage"></mapping>
+  <mapping class="com.mkyong.common.AppointmentCalendarH.Visit"></mapping>
+  <mapping class="com.mkyong.common.AppointmentCalendarH.AppointmentCalendar"></mapping>
+  <mapping class="com.mkyong.common.AppointmentCalendarH.Appointment"></mapping>
  <mapping class="com.mkyong.common.AppointmentCalendarH.Reminder"></mapping>
  <mapping class="com.mkyong.common.RegimenH.DrugCompositionGroup"></mapping>
   <mapping class="com.mkyong.common.RegimenH.DrugComposition"></mapping>
-  <mapping class="com.mkyong.common.RegimenH.Regimen"></mapping>              
-    
-    
-   
- 
+  <mapping class="com.mkyong.common.RegimenH.Regimen"></mapping> 
+  <mapping class="com.mkyong.common.MonitoringAgent"></mapping>
+  <mapping class="com.mkyong.common.CallTimeSlot"></mapping>
+  <mapping class="com.mkyong.common.DosageAdherenceLog"></mapping>
 
 
-      
-        
-    </session-factory>
+
+
+
+
+
+
+
+  <mapping class="com.mkyong.common.DosageAdherenceLog"></mapping></session-factory>
 </hibernate-configuration>
