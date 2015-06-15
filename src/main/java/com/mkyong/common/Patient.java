@@ -26,7 +26,6 @@ import org.motechproject.util.DateUtil;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.mkyong.extras.CouchEntity;
-import com.mkyong.extras.TimeOfDay;
 
 
 @Entity
@@ -192,9 +191,7 @@ public class Patient extends CouchEntity{
     }*/
 
     
-    public TimeOfDay getBestCallTime() {
-        return this.patientPreferences.getBestCallTime();
-    }
+   
 
     
     /*public DayOfWeek getDayOfWeeklyCall() {

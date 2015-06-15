@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
@@ -18,7 +17,6 @@ import org.joda.time.DateTime;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import com.mkyong.extras.BaseEntity;
-import com.mkyong.extras.TimeOfDay;
 
 @Entity
 @Table
@@ -48,8 +46,8 @@ public class PatientPreferences extends BaseEntity{
     //@Enumerated(EnumType.STRING)
     private String dayOfWeeklyCall;
 
-    @OneToOne(cascade = {CascadeType.ALL})
-	private TimeOfDay bestCallTime;
+   
+	private String bestCallTime;
 
     private boolean receiveOTCAdvice = false;
 
@@ -102,11 +100,11 @@ public class PatientPreferences extends BaseEntity{
         this.dayOfWeeklyCall = dayOfWeeklyCall;
     }
 
-    public com.mkyong.extras.TimeOfDay getBestCallTime() {
+    public String getBestCallTime() {
         return bestCallTime;
     }
 
-    public void setBestCallTime(TimeOfDay bestCallTime) {
+    public void setBestCallTime(String bestCallTime) {
         this.bestCallTime = bestCallTime;
     }
 

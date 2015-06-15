@@ -5,25 +5,6 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.service.ServiceRegistry;
 
-import com.mkyong.common.Ailment;
-import com.mkyong.common.Ailments;
-import com.mkyong.common.AllergyHistory;
-import com.mkyong.common.City;
-import com.mkyong.common.Clinic;
-import com.mkyong.common.ClinicianContact;
-import com.mkyong.common.Gender;
-import com.mkyong.common.HIVMedicalHistory;
-import com.mkyong.common.HIVTestReason;
-import com.mkyong.common.IVRLanguage;
-import com.mkyong.common.MedicalHistory;
-import com.mkyong.common.MedicalHistoryQuestion;
-import com.mkyong.common.ModeOfTransmission;
-import com.mkyong.common.NonHIVMedicalHistory;
-import com.mkyong.common.OtherAilment;
-import com.mkyong.common.Patient;
-import com.mkyong.common.PatientPreferences;
-import com.mkyong.common.SystemCategory;
-import com.mkyong.extras.TimeOfDay;
 
 public class HibernateUtil {
 

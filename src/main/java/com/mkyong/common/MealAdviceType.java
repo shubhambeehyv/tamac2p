@@ -26,15 +26,5 @@ public class MealAdviceType extends CouchEntity {
     public MealAdviceType(String type) {
         this.type = type;
     }
-
-    @NotNull
-    private String type;
-
-    public String getType() {
-        return this.type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }
+ 

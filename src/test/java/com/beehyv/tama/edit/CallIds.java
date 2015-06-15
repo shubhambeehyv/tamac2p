@@ -11,8 +11,8 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.tama.facility.repository.AllMonitoringAgents;
 import org.motechproject.tama.ivr.repository.AllCallLogs;
-import org.motechproject.tama.refdata.objectcache.AllCitiesCache;
 import org.motechproject.tama.patient.repository.AllPatients;
+import org.motechproject.tama.refdata.objectcache.AllCitiesCache;
 import org.motechproject.tama.refdata.objectcache.AllIVRLanguagesCache;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
@@ -27,9 +27,7 @@ import com.mkyong.common.ModeOfTransmission;
 import com.mkyong.common.MonitoringAgent;
 import com.mkyong.common.NonHIVMedicalHistory;
 import com.mkyong.common.OtherAilment;
-import com.mkyong.common.Stock;
 import com.mkyong.common.SystemCategory;
-import com.mkyong.extras.TimeOfDay;
 import com.mkyong.persistence.HibernateUtil;
 
 
@@ -237,13 +235,11 @@ public class CallIds
     	}
     
     	
-    	com.mkyong.extras.TimeOfDay hBestCallTime = new com.mkyong.extras.TimeOfDay();
+    	
     	org.motechproject.tama.common.domain.TimeOfDay bestcallTime = patientPreferences.getBestCallTime();
-    	hBestCallTime.setHour(bestcallTime.getHour());
-    	hBestCallTime.setMinute(bestcallTime.getMinute());
-    	hBestCallTime.setTimeMeridiem(bestcallTime.getTimeMeridiem().toString());
-    	session.save(hBestCallTime);
-    	hPatientPreferences.setBestCallTime(hBestCallTime);
+    	
+    	
+    	hPatientPreferences.setBestCallTime(bestcallTime.toString());
     	hPatientPreferences.setReceiveOTCAdvice(patientPreferences.getReceiveOTCAdvice());
     	hPatientPreferences.setActivateAppointmentReminders(patientPreferences.getActivateAppointmentReminders());
     	hPatientPreferences.setCallPreferenceTransitionDate(patientPreferences.getCallPreferenceTransitionDate());

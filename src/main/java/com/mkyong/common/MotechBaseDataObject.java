@@ -5,7 +5,7 @@ import javax.persistence.MappedSuperclass;
 @MappedSuperclass
 public abstract class MotechBaseDataObject extends CouchDbDocument {
 
-    private String type;
+    protected String type;
 
     protected MotechBaseDataObject() {
         this.type = this.getClass().getSimpleName();

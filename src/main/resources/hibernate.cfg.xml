@@ -13,7 +13,7 @@
         
         <property name="show_sql">true</property>
          <property name="format_sql">true</property>
-    	<property name="hbm2ddl.auto">update</property>
+    	<property name="hbm2ddl.auto">create</property>
        
        
  <mapping class="com.mkyong.common.IVRLanguage"></mapping>
@@ -32,7 +32,7 @@
 <mapping class="com.mkyong.common.NonHIVMedicalHistory"></mapping>
 <mapping class="com.mkyong.common.OtherAilment"></mapping>
 <mapping class="com.mkyong.common.SystemCategory"></mapping>
-<mapping class="com.mkyong.extras.TimeOfDay"></mapping>
+
  <mapping class="com.mkyong.common.City"></mapping>
  <mapping class="com.mkyong.common.Clinic"></mapping>
  <mapping class="com.mkyong.common.ClinicianContact"></mapping>
@@ -54,6 +54,29 @@
   <mapping class="com.mkyong.common.MonitoringAgent"></mapping>
   <mapping class="com.mkyong.common.CallTimeSlot"></mapping>
   <mapping class="com.mkyong.common.DosageAdherenceLog"></mapping>
+   <mapping class="com.mkyong.common.AccessEvent"></mapping>
+    <mapping class="com.mkyong.common.Alert"></mapping>
+     <mapping class="com.mkyong.common.Brand"></mapping>
+       <mapping class="com.mkyong.common.DosageAdherenceLog"></mapping>
+ <mapping class="com.mkyong.common.ChangePasswordEvent"></mapping>
+  <mapping class="com.mkyong.common.Drug"></mapping>
+   <mapping class="com.mkyong.common.DrugDosage"></mapping>
+    <mapping class="com.mkyong.common.IVRCallAudit"></mapping>  
+     <mapping class="com.mkyong.common.IVRLanguage"></mapping>
+      <mapping class="com.mkyong.common.LabResult"></mapping>
+   <mapping class="com.mkyong.common.LabTest"></mapping>
+    <mapping class="com.mkyong.common.MealAdviceType"></mapping>
+     <mapping class="com.mkyong.common.MessageHistory"></mapping>
+      <mapping class="com.mkyong.common.MonitoringAgent"></mapping>
+ <mapping class="com.mkyong.common.PatientEventLog"></mapping>
+  <mapping class="com.mkyong.common.ReportedOpportunisticInfections"></mapping>
+   <mapping class="com.mkyong.common.SMSLog"></mapping>
+    <mapping class="com.mkyong.common.SymptomReport"></mapping>
+     <mapping class="com.mkyong.common.TreatmentAdvice"></mapping>
+      <mapping class="com.mkyong.common.UniquePatientField"></mapping>
+       <mapping class="com.mkyong.common.VitalStatistics"></mapping>
+        <mapping class="com.mkyong.common.WeeklyAdherenceLog"></mapping>          
+  
 
 
 
